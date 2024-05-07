@@ -1,5 +1,7 @@
 package com.daniela.car;
 
+import com.daniela.carbooking.CarBooking;
+
 public class CarService {
     private CarDoa carDoa = new CarDoa();
 
@@ -37,5 +39,27 @@ public class CarService {
                 break;
             }
         }
+    }
+
+    public void displayElectricCars() {
+        var availableElectricCars = this.getAvailableCars(true);
+        for (Car car : availableElectricCars) {
+            if (car != null) {
+                System.out.println(car);
+            }
+        }
+    }
+
+    // checks if the given reg number is valid/available
+    public boolean isValidRegNumber(String regNumber) {
+        var availableCars = this.getAvailableCars(false);
+
+        for (Car availableCar : availableCars) {
+            if (availableCar != null && availableCar.getRegistrationNum().equals(regNumber)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

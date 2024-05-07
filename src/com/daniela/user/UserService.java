@@ -1,5 +1,7 @@
 package com.daniela.user;
 
+import com.daniela.carbooking.CarBooking;
+
 import java.util.UUID;
 
 public class UserService {
@@ -27,5 +29,18 @@ public class UserService {
                 System.out.println(user);
             }
         }
+    }
+
+    // checks if the given reg number is valid/available
+    public boolean isValidUser(UUID userId) {
+        var users = this.getAllUsers();
+
+        for (User user : users) {
+            if (user != null && user.getId().equals(userId)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

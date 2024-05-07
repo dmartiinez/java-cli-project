@@ -12,6 +12,7 @@ import java.util.UUID;
 
 public class Main {
     public static void main(String[] args) {
+        var exceptionCaught = false;
         var options = """
             1️⃣ - Book Car
             2️⃣ - View All User Booked Cars
@@ -23,8 +24,9 @@ public class Main {
         """;
         System.out.println();
         System.out.println(options);
-        //Prompt for user input
+
         try {
+            //Prompt for user input
             Scanner scanner = new Scanner(System.in);
             int userInput = scanner.nextInt();
             scanner.nextLine();
@@ -47,53 +49,22 @@ public class Main {
                             UUID userId = UUID.fromString(scanner.nextLine());
 
                             bookingService.addBooking(new CarBooking(userId, registrationNum));
-
                             break;
                         case 2:
                             userService.displayAllUsers();
                             System.out.print("➡\uFE0F Enter User ID: ");
                             UUID id = UUID.fromString(scanner.nextLine());
-                            var userBookings = bookingService.getBookingsByUser(id);
-                            int bookingCount = 0;
-                            for (CarBooking userBooking : userBookings) {
-                                if (userBooking != null) {
-                                    bookingCount++;
-                                    System.out.println(userBooking);
-                                }
-                            }
 
-                            if (bookingCount == 0) {
-                                var user = userService.getUserById(id);
-                                if (user == null) {
-                                    System.out.println("❌ User does not exist.");
-                                } else {
-                                    System.out.println("❌ User " + user + " has no cars booked.");
-                                }
-                            }
+                            bookingService.displayBookingsByUser(id);
                             break;
                         case 3:
-                            var allBookings = bookingService.getAllBookings();
-
-                            if (bookingService.getBookingCount() == 0) {
-                                System.out.println("There are no scheduled bookings at this time.");
-                            } else {
-                                for (CarBooking booking : allBookings) {
-                                    if (booking != null) {
-                                        System.out.println(booking);
-                                    }
-                                }
-                            }
+                            bookingService.displayAllBookings();
                             break;
                         case 4:
                             carService.displayAvailableCars();
                             break;
                         case 5:
-                            var availableElectricCars = carService.getAvailableCars(true);
-                            for (Car car : availableElectricCars) {
-                                if (car != null) {
-                                    System.out.println(car);
-                                }
-                            }
+                            carService.displayElectricCars();
                             break;
                         case 6:
                             userService.displayAllUsers();
@@ -110,7 +81,15 @@ public class Main {
             }
 
         } catch (InputMismatchException e) {
-            System.out.println("❌ input must be an integer between 1 and 7.");
+            System.out.println("❌ " + e.getMessage());
+            exceptionCaught = true;
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            exceptionCaught = true;
+        }
+
+        if (exceptionCaught) {
+            Main.main(null);
         }
     }
 }

@@ -2,7 +2,7 @@ package com.daniela.carbooking;
 
 public class CarBookingDao {
     private static CarBooking[] carBookings;
-    private static final int MAX_NUM_BOOKINGS = 10;
+    private static final int MAX_NUM_BOOKINGS = 3;
     private static int nextAvailableBookingSlot = 0;
 
     static {
