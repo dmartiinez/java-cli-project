@@ -2,8 +2,8 @@ package com.daniela.user;
 
 import java.util.UUID;
 
-public class UserDoa {
-    private static User[] users;
+public class UserArrayDataAccessService implements UserDao{
+    private static final User[] users;
 
     static {
         users = new User[] {

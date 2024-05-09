@@ -1,14 +1,12 @@
 package com.daniela.user;
 
-import com.daniela.carbooking.CarBooking;
-
 import java.util.UUID;
 
 public class UserService {
-    private static UserDoa userDoa = new UserDoa();
+    private UserDao userDao = new UserFileDateAccessService();
 
     public User[] getAllUsers() {
-        return userDoa.getUsers();
+        return userDao.getUsers();
     }
 
     public User getUserById(UUID id) {

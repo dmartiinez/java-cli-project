@@ -38,7 +38,6 @@ public class Main {
                 if (userInput < 1 || userInput > 7) {
                     System.out.println("❌ " + userInput + " is not a valid option.");
                 } else {
-
                     switch (userInput) {
                         case 1:
                             carService.displayAvailableCars();
@@ -79,6 +78,8 @@ public class Main {
                 userInput = scanner.nextInt();
                 scanner.nextLine();
             }
+
+            scanner.close();
 
         } catch (InputMismatchException e) {
             System.out.println("❌ " + e.getMessage());

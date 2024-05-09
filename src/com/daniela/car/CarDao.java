@@ -1,6 +1,6 @@
 package com.daniela.car;
 
-public class CarDoa {
+public class CarDao {
     private static Car[] cars;
 
     static {

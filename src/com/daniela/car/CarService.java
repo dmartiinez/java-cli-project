@@ -1,12 +1,10 @@
 package com.daniela.car;
 
-import com.daniela.carbooking.CarBooking;
-
 public class CarService {
-    private CarDoa carDoa = new CarDoa();
+    private CarDao carDao = new CarDao();
 
     public Car[] getAvailableCars(boolean getElectricOnly) {
-        var availableCars = carDoa.getCars();
+        var availableCars = carDao.getCars();
         if (!getElectricOnly) {
             return availableCars;
         }
