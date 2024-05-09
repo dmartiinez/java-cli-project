@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.UUID;
 
-public class UserFileDateAccessService implements UserDao{
+public class UserFileDateAccessService implements UserDao {
     @Override
     public User[] getUsers() {
         File usersFile = new File("src/com/daniela/users.csv");

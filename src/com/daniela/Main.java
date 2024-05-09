@@ -2,12 +2,14 @@ package com.daniela;
 
 import com.daniela.car.CarDao;
 import com.daniela.car.CarService;
+import com.daniela.car.FuelTypeCategory;
 import com.daniela.carbooking.CarBooking;
 import com.daniela.carbooking.CarBookingDao;
 import com.daniela.carbooking.CarBookingService;
 import com.daniela.user.UserDao;
 import com.daniela.user.UserFileDateAccessService;
 import com.daniela.user.UserService;
+import com.daniela.util.Printer;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -34,6 +36,7 @@ public class Main {
         CarService carService = new CarService(carDao);
         UserService userService = new UserService(userDao);
         CarBookingService bookingService = new CarBookingService(carBookingDao, userService, carService);
+        Printer printer = new Printer(bookingService, userService, carService);
 
         try {
             //Prompt for user input
@@ -47,33 +50,33 @@ public class Main {
                 } else {
                     switch (userInput) {
                         case 1:
-                            carService.displayAvailableCars();
+                            printer.displayAvailableCars(FuelTypeCategory.ALL);
                             System.out.print("➡\uFE0F Enter Car Registration Number: ");
                             String registrationNum = scanner.nextLine();
-                            userService.displayAllUsers();
+                            printer.displayAllUsers();
                             System.out.print("➡\uFE0F Enter User ID: ");
                             UUID userId = UUID.fromString(scanner.nextLine());
 
                             bookingService.addBooking(new CarBooking(userId, registrationNum));
                             break;
                         case 2:
-                            userService.displayAllUsers();
+                            printer.displayAllUsers();
                             System.out.print("➡\uFE0F Enter User ID: ");
                             UUID id = UUID.fromString(scanner.nextLine());
 
-                            bookingService.displayBookingsByUser(id);
+                            printer.displayBookingsByUser(id);
                             break;
                         case 3:
-                            bookingService.displayAllBookings();
+                            printer.displayAllBookings();
                             break;
                         case 4:
-                            carService.displayAvailableCars();
+                            printer.displayAvailableCars(FuelTypeCategory.ALL);
                             break;
                         case 5:
-                            carService.displayElectricCars();
+                            printer.displayAvailableCars(FuelTypeCategory.ELECTRIC);
                             break;
                         case 6:
-                            userService.displayAllUsers();
+                            printer.displayAllUsers();
                             break;
                         default:
                             break;

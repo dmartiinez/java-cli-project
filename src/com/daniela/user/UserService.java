@@ -23,26 +23,4 @@ public class UserService {
 
         return null;
     }
-
-    public void displayAllUsers() {
-        var allUsers = getAllUsers();
-        for (User user : allUsers) {
-            if (user != null) {
-                System.out.println(user);
-            }
-        }
-    }
-
-    // checks if the given reg number is valid/available
-    public boolean isValidUser(UUID userId) {
-        var users = this.getAllUsers();
-
-        for (User user : users) {
-            if (user != null && user.getId().equals(userId)) {
-                return true;
-            }
-        }
-
-        return false;
-    }
 }
