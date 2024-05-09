@@ -7,15 +7,14 @@ import com.daniela.user.UserService;
 import java.util.UUID;
 
 public class CarBookingService {
-    private CarBookingDao carBookingDao = new CarBookingDao();
+    private final CarBookingDao carBookingDao = new CarBookingDao();
+    private final UserService userService = new UserService();
+    private final CarService carService = new CarService();
 
     public void addBooking(CarBooking booking) {
         if (booking == null) {
             return;
         }
-
-        var userService = new UserService();
-        var carService = new CarService();
 
         if (!userService.isValidUser(booking.getUserId()) || !carService.isValidRegNumber(booking.getCarRegistrationNum())) {
             System.out.println("❌ Booking was not successful. Please provide a valid user and available registration number.");
