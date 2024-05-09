@@ -1,15 +1,20 @@
 package com.daniela.carbooking;
 
-import com.daniela.car.Car;
 import com.daniela.car.CarService;
 import com.daniela.user.UserService;
 
 import java.util.UUID;
 
 public class CarBookingService {
-    private final CarBookingDao carBookingDao = new CarBookingDao();
-    private final UserService userService = new UserService();
-    private final CarService carService = new CarService();
+    private final CarBookingDao carBookingDao;
+    private final UserService userService;
+    private final CarService carService;
+
+    public CarBookingService(CarBookingDao carBookingDao, UserService userService, CarService carService) {
+        this.carBookingDao = carBookingDao;
+        this.userService = userService;
+        this.carService = carService;
+    }
 
     public void addBooking(CarBooking booking) {
         if (booking == null) {
@@ -78,7 +83,6 @@ public class CarBookingService {
         }
 
         if (bookingCount == 0) {
-            UserService userService = new UserService();
             var user = userService.getUserById(userId);
             if (user == null) {
                 System.out.println("❌ User does not exist.");

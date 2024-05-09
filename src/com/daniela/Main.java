@@ -1,9 +1,12 @@
 package com.daniela;
 
-import com.daniela.car.Car;
+import com.daniela.car.CarDao;
 import com.daniela.car.CarService;
 import com.daniela.carbooking.CarBooking;
+import com.daniela.carbooking.CarBookingDao;
 import com.daniela.carbooking.CarBookingService;
+import com.daniela.user.UserDao;
+import com.daniela.user.UserFileDateAccessService;
 import com.daniela.user.UserService;
 
 import java.util.InputMismatchException;
@@ -25,14 +28,18 @@ public class Main {
         System.out.println();
         System.out.println(options);
 
+        CarDao carDao = new CarDao();
+        CarBookingDao carBookingDao = new CarBookingDao();
+        UserDao userDao = new UserFileDateAccessService();
+        CarService carService = new CarService(carDao);
+        UserService userService = new UserService(userDao);
+        CarBookingService bookingService = new CarBookingService(carBookingDao, userService, carService);
+
         try {
             //Prompt for user input
             Scanner scanner = new Scanner(System.in);
             int userInput = scanner.nextInt();
             scanner.nextLine();
-            CarService carService = new CarService();
-            CarBookingService bookingService = new CarBookingService();
-            UserService userService = new UserService();
 
             while (userInput != 7) {
                 if (userInput < 1 || userInput > 7) {

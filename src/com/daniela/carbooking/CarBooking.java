@@ -1,9 +1,5 @@
 package com.daniela.carbooking;
 
-
-import com.daniela.car.Car;
-import com.daniela.user.User;
-
 import java.time.LocalDateTime;
 import java.util.UUID;
 

@@ -1,6 +1,5 @@
 package com.daniela.user;
 
-import java.util.Objects;
 import java.util.UUID;
 
 public class User {
@@ -35,6 +34,4 @@ public class User {
                 ", name='" + name + '\'' +
                 '}';
     }
-
-
 }

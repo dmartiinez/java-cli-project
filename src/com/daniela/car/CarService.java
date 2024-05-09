@@ -1,7 +1,11 @@
 package com.daniela.car;
 
 public class CarService {
-    private CarDao carDao = new CarDao();
+    private CarDao carDao;
+
+    public CarService(CarDao carDao) {
+        this.carDao = carDao;
+    }
 
     public Car[] getAvailableCars(boolean getElectricOnly) {
         var availableCars = carDao.getCars();
