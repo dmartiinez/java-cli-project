@@ -1,7 +1,5 @@
 package com.daniela.car;
 
-import java.util.Arrays;
-
 public class CarService {
     private CarDao carDao;
 
@@ -32,7 +30,7 @@ public class CarService {
 
     public void removeCar(String registrationNum) {
         var availableCars = getAvailableCars(FuelTypeCategory.ALL);
-        System.out.println(Arrays.toString(availableCars));
+
         for (int i = 0; i < availableCars.length; i++) {
             if (availableCars[i] != null && availableCars[i].getRegistrationNum().equals(registrationNum)) {
                 // shift the values after the index to be deleted down until the end of the array
