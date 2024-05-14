@@ -25,7 +25,7 @@ public class Main {
         CarBookingDao carBookingDao = new CarBookingDao();
 
         CarService carService = new CarService(carDao);
-        CarBookingService bookingService = new CarBookingService(carBookingDao, userService, carService);
+        CarBookingService bookingService = new CarBookingService(carBookingDao, carService);
 
         Scanner scanner = new Scanner(System.in);
         boolean keepPrompting = true;

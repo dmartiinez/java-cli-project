@@ -13,12 +13,10 @@ import java.util.UUID;
 
 public class CarBookingService {
     private final CarBookingDao carBookingDao;
-    private final UserService userService;
     private final CarService carService;
 
-    public CarBookingService(CarBookingDao carBookingDao, UserService userService, CarService carService) {
+    public CarBookingService(CarBookingDao carBookingDao, CarService carService) {
         this.carBookingDao = carBookingDao;
-        this.userService = userService;
         this.carService = carService;
     }
 
