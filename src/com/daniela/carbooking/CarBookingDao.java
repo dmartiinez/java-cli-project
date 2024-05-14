@@ -1,31 +1,20 @@
 package com.daniela.carbooking;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CarBookingDao {
-    private static CarBooking[] carBookings;
-    private static final int MAX_NUM_BOOKINGS = 3;
-    private static int nextAvailableBookingSlot = 0;
+    private static List<CarBooking> carBookings;
 
     static {
-        carBookings = new CarBooking[MAX_NUM_BOOKINGS];
+        carBookings = new ArrayList<>();
     }
 
-    public boolean saveBooking(CarBooking booking) {
-        if (nextAvailableBookingSlot == MAX_NUM_BOOKINGS) {
-            System.out.println("Sorry, we are not taking any more bookings at this time.");
-            return false;
-        }
-
-        carBookings[nextAvailableBookingSlot++] = booking;
-
-        return true;
-
+    public void saveBooking(CarBooking booking) {
+        carBookings.add(booking);
     }
 
-    public CarBooking[] getCarBookings() {
+    public List<CarBooking> getCarBookings() {
         return carBookings;
-    }
-
-    public static int getNextAvailableBookingSlot() {
-        return nextAvailableBookingSlot;
     }
 }

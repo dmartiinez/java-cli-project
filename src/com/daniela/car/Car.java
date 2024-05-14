@@ -1,5 +1,7 @@
 package com.daniela.car;
 
+import java.util.Objects;
+
 public class Car {
     private String registrationNum;
     private double rentalPricePerDay;
@@ -64,5 +66,18 @@ public class Car {
                 ", brand=" + brand +
                 ", isElectric=" + isElectric +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return Double.compare(rentalPricePerDay, car.rentalPricePerDay) == 0 && capacity == car.capacity && isElectric == car.isElectric && Objects.equals(registrationNum, car.registrationNum) && brand == car.brand;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(registrationNum, rentalPricePerDay, capacity, brand, isElectric);
     }
 }

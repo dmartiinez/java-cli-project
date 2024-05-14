@@ -4,15 +4,16 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class UserFileDateAccessService implements UserDao {
     @Override
-    public User[] getUsers() {
+    public List<User> getUsers() {
         File usersFile = new File("src/com/daniela/users.csv");
 
-        var users = new User[10];
-        int currIndex = 0;
+        List<User> users = new ArrayList<>();
         String line;
 
         try{
@@ -31,7 +32,7 @@ public class UserFileDateAccessService implements UserDao {
                // TODO: check if user ID already exists and either generate a new ID or skip adding user
                UUID userId = UUID.fromString(userInfo[0]);
                String userName = userInfo[1];
-               users[currIndex++] = new User(userId, userName);
+               users.add(new User(userId, userName));
            }
 
            reader.close();
