@@ -96,9 +96,7 @@ public class Main {
             System.out.println("❌ User " + user + " has no cars booked.");
         }
 
-        for (Car userBooking : userBookings) {
-            System.out.println(userBooking);
-        }
+        userBookings.forEach(System.out::println);
     }
 
     private static void displayAvailableCars(CarBookingService carBookingService, boolean isElectric) {

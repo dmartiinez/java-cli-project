@@ -16,18 +16,9 @@ public class CarService {
 
     public List<Car> getAvailableElectricCars() {
         List<Car> cars = carDao.getCars();
-        List<Car> electricCars = new ArrayList<>();
-        for (Car car : cars) {
-            if (car != null && car.isElectric()) {
-                electricCars.add(car);
-            }
-        }
+        List<Car> electricCars = cars.stream().filter(car -> car.isElectric()).toList();
+
 
         return electricCars;
-    }
-
-
-    public void removeCar(String regNumber) {
-        carDao.removeCar(regNumber);
     }
 }

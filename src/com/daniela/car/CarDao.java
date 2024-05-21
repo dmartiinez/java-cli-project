@@ -18,8 +18,4 @@ public class CarDao {
     public List<Car> getCars() {
         return cars;
     }
-
-    public void removeCar(String regNumber) {
-        cars.removeIf(r -> r.getRegistrationNum().equals(regNumber));
-    }
 }

@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 public class CarBookingService {
     private final CarBookingDao carBookingDao;
@@ -28,7 +29,7 @@ public class CarBookingService {
         }
 
         for (Car car: availableCars) {
-            if (car != null && car.getRegistrationNum().equals(registrationNumber)) {
+            if (car.getRegistrationNum().equals(registrationNumber)) {
                 UUID bookingId = UUID.randomUUID();
                 carBookingDao.saveBooking(
                         new CarBooking(bookingId, user, car, LocalDateTime.now(), false)
@@ -49,11 +50,9 @@ public class CarBookingService {
         List<CarBooking> currentBookings = carBookingDao.getCarBookings();
         List<Car> userCars = new ArrayList<>();
 
-        for (CarBooking currentBooking : currentBookings) {
-            if (currentBooking != null && currentBooking.getUser().getId().equals(userId)) {
-                userCars.add(currentBooking.getCar());
-            }
-        }
+        currentBookings.stream()
+                .filter(booking -> booking.getUser().getId().equals(userId))
+                .forEach(booking -> userCars.add(booking.getCar()));
 
         return userCars;
     }
@@ -78,21 +77,10 @@ public class CarBookingService {
             return cars;
         }
 
-        List<Car> availableCars = new ArrayList<>();
-
-        for (Car car : cars) {
-            boolean carIsBooked= false;
-            for (CarBooking carBooking : carBookings) {
-                if (carBooking != null && carBooking.getCar().equals(car)) {
-                    carIsBooked = true;
-                    break;
-                }
-            }
-
-            if (!carIsBooked) {
-                availableCars.add(car);
-            }
-        }
+        // filter cars by checking if they exist in any of the existing bookings
+        List<Car> availableCars = cars.stream().filter(car ->
+                !carBookings.stream().anyMatch(carBooking -> carBooking.getCar().equals(car)))
+                .toList();
 
         return availableCars;
     }
