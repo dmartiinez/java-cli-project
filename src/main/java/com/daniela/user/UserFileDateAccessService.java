@@ -11,7 +11,7 @@ import java.util.UUID;
 public class UserFileDateAccessService implements UserDao {
     @Override
     public List<User> getUsers() {
-        File usersFile = new File("src/com/daniela/users.csv");
+        File usersFile = new File(getClass().getClassLoader().getResource("users.csv").getPath());
 
         List<User> users = new ArrayList<>();
         String line;

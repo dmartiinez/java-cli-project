@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1e4c7553-20c9-4fa3-8606-609aa83830ce" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CLIProject.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLI Project.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/daniela/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/daniela/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/daniela/car/Brand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/daniela/car/Brand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/daniela/car/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/daniela/car/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/daniela/car/CarDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/daniela/car/CarDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/daniela/car/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/daniela/car/CarService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/daniela/carbooking/CarBooking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/daniela/carbooking/CarBooking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/daniela/carbooking/CarBookingDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/daniela/carbooking/CarBookingDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/daniela/carbooking/CarBookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/daniela/carbooking/CarBookingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/daniela/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/daniela/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/daniela/user/UserArrayDataAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/daniela/user/UserArrayDataAccessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/daniela/user/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/daniela/user/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/daniela/user/UserFileDateAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/daniela/user/UserFileDateAccessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/daniela/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/daniela/user/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/daniela/users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/users.csv" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2gpKwl4JavdyrVJ7Qp4r04EAof9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/daniela/JavaPractive/CLIProject",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1e4c7553-20c9-4fa3-8606-609aa83830ce" name="Changes" comment="" />
+      <created>1716389319477</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1716389319477</updated>
+    </task>
+    <servers />
+  </component>
+</project>
