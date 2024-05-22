@@ -6,10 +6,7 @@ import com.daniela.car.CarService;
 import com.daniela.carbooking.CarBooking;
 import com.daniela.carbooking.CarBookingDao;
 import com.daniela.carbooking.CarBookingService;
-import com.daniela.user.User;
-import com.daniela.user.UserDao;
-import com.daniela.user.UserFileDateAccessService;
-import com.daniela.user.UserService;
+import com.daniela.user.*;
 
 import java.util.List;
 import java.util.Scanner;
@@ -18,7 +15,7 @@ import java.util.UUID;
 public class Main {
     public static void main(String[] args) {
 
-        UserDao userDao = new UserFileDateAccessService();
+        UserDao userDao = new UserFakerDataAccessService();
         UserService userService = new UserService(userDao);
 
         CarDao carDao = new CarDao();
